@@ -13,7 +13,7 @@ function Home() {
             We offer a wide range of high-quality services and products to meet all your needs. 
             Our expertise and dedication ensure your satisfaction.
           </p>
-          <button className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+          <button className="mt-6 btn btn-primary">
             Learn More
           </button>
         </div>
