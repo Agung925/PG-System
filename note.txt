@@ -1,3 +1,113 @@
+TailwindCSS + daisyUI &amp; gulp-file-include
+
+Sturktur folder:
+pg_system/
+│
+├── dist/                               # Hasil build/produksi
+│   ├── css/                            # File CSS hasil minifikasi
+│   ├── js/                             # File JS hasil minifikasi
+│   ├── images/                         # Gambar yang sudah dioptimasi
+│   ├── pages/                          # Halaman final (HTML statis)
+│   	└── index.html
+│
+├── src/                                # Sumber utama untuk pengembangan
+│   ├── css/                            # File TailwindCSS
+│   ├── js/                             # JavaScript (jika ada)
+│   ├── images/                         # Gambar dan logo asli
+│   │   ├── logo-primary.png 
+│   │   ├── logo-secondary.png
+│   │   ├── retail_environment_bg.png 
+│   │   ├── green_minimalist_bg.png
+│   │   ├── profile_placeholder_icon.png
+│   │   ├── modern_furniture_bg.png
+│   │   └── minimalist_gray_bg.png
+│   ├── components/                     # Komponen HTML yang reusable
+│   │   ├── header.html
+│   │   ├── footer.html
+│   │   ├── navbar.html
+│   │   ├── sidebar.html
+│   ├── pages/                          # Semua halaman HTML
+│   │   ├── auth/                       # Modul Autentikasi
+│   │   │   ├── login.html              # Halaman login
+│   │   │   └── register.html           # Halaman register
+│   │   ├── user/                       # Modul Pengguna
+│   │   │   ├── profile.html            # Halaman profile pengguna
+│   │   │   └── settings.html           # Halaman pengaturan pengguna
+│   │   ├── management/                 # Modul Manajemen
+│   │   │   ├── dashboard.html          # Halaman dashboard
+│   │   │   ├── employees.html          # Manajemen karyawan
+│   │   │   ├── departments.html        # Manajemen departemen
+│   │   │   └── reports.html            # Halaman laporan
+│   │   ├── hrm/                        # Modul Human Resource Management
+│   │   │   ├── attendance.html         # Halaman absensi
+│   │   │   ├── payroll.html            # Halaman payroll
+│   │   │   └── performance.html        # Halaman evaluasi kinerja
+│   │   ├── finance/                    # Modul Keuangan
+│   │   │   ├── accounting.html         # Halaman akuntansi
+│   │   │   ├── budgeting.html          # Halaman budgeting
+│   │   │   └── reports.html            # Laporan keuangan
+│   │   ├── sales/                      # Modul Penjualan
+│   │   │   ├── orders.html             # Halaman order
+│   │   │   ├── customers.html          # Manajemen pelanggan
+│   │   │   └── products.html           # Manajemen produk
+│   │   └── index.html                  # Halaman utama
+│
+├── public/                             # File yang tidak perlu diproses, bisa diakses langsung
+│   ├── icons/
+│   ├── favicon.ico                     # Favicon
+│   └── manifest.json                   # Web manifest (jika diperlukan)
+│
+├── assets/                             # Aset umum seperti font, ikon
+│   ├── fonts/
+│   │   ├── Poppins-Black.ttf
+│   │   ├── Poppins-Bold.ttf
+│   │   ├── Poppins-Italic.ttf
+│   │   ├── Poppins-Light.ttf
+│   │   ├── Poppins-Medium.ttf
+│   │   ├── Poppins-Regular.ttf
+│   │   └── Poppins-Thin.ttf
+│   └── icons/
+│   │   ├── check-circle.svg
+│   │   ├── dashboard.svg
+│   │   ├── download.svg
+│   │   ├── edit.svg
+│   │   ├── exclamation.svg
+│   │   ├── home.svg
+│   │   ├── logout.svg
+│   │   ├── plus.svg
+│   │   ├── profile.svg
+│   │   ├── search.svg
+│   │   ├── settings.svg
+│   │   ├── trash.svg
+│   │   └── x-circle.svg
+│
+├── gulpfile.js                         # Gulp untuk file include dan optimasi
+├── tailwind.config.js                  # Konfigurasi Tailwind
+├── postcss.config.js                   # Konfigurasi PostCSS
+├── package.json                        # NPM scripts dan dependencies
+├── README.md                           # Dokumentasi proyek
+├── node_modules/                       # Hasil dari npm install
+│
+└── .gitignore                          # File/folder yang diabaikan Git
+
+1. npm init -y                                          # inisialisasi proyek Node.js
+
+2. npm install tailwindcss postcss autoprefixer         # instal Tailwind CSS beserta dependensinya
+    • tailwindcss: Framework utama yang akan digunakan.
+    • postcss: Alat untuk mengubah CSS dengan plugin.
+    • autoprefixer: Plugin PostCSS untuk menambahkan prefix vendor secara otomatis untuk kompatibilitas lintas browser.
+
+3. npx tailwindcss init                                 # Membuat File Konfigurasi Tailwind
+
+"dev": "npx tailwindcss -i ./src/styles.css -o ./dist/output.css --watch",
+
+4. npm install --save-dev gulp-file-include
+5. npm install --save-dev postcss gulp-postcss
+6. npm install --save-dev gulp-autoprefixer
+
+
+
+
 1. Header:
 Header biasanya berisi logo dan menu navigasi. Kita akan menggunakan grid untuk menyusun header agar responsif.
 Penjelasan:
@@ -34,5 +144,6 @@ Penjelasan:
 	Footer berisi tautan tambahan, informasi hak cipta, dan kontak.
 Penjelasan:
 •	Footer simpel dengan warna abu-abu gelap untuk membedakan dari konten utama.
+
 
 
